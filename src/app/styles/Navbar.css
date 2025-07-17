@@ -1,0 +1,93 @@
+.navbarOuter {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.navbarContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbarInner {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 14px 30px;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navLinks a,
+.navLinks .dropdown {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navLinks .arrow {
+    margin-left: 4px;
+    font-size: 10px;
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #cf2030;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.email-icon {
+    font-size: 16px;
+    color: #cf2030;
+}
+
+.inviteButton {
+    background-color: #cf2030;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.inviteButton:hover {
+    background-color: #a91522;
+}

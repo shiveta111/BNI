@@ -1,0 +1,48 @@
+.cta-banner-wrapper {
+    padding: 60px 20px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+}
+
+.cta-banner-container {
+    max-width: 1280px;
+    background-color: #f3f3f3;
+    padding: 40px 30px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+}
+
+.cta-banner-text h2 {
+    font-size: 24px;
+    line-height: 1.6;
+    font-weight: 500;
+    margin: 0;
+}
+
+.cta-banner-text .red {
+    color: #c8102e;
+    font-weight: 600;
+}
+
+.cta-banner-btn button {
+    background-color: #c8102e;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-banner-btn button:hover {
+    background-color: #a80c24;
+}

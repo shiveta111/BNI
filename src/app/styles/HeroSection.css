@@ -1,0 +1,43 @@
+.bni-hero-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.bni-hero-card {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.bni-hero-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2rem;
+}
+
+
+.bni-hero-btn {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #cc0f2e;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.bni-hero-btn:hover {
+    background-color: #a00d26;
+    transform: scale(1.05);
+}
