@@ -37,19 +37,19 @@ const ThreeStepsSection = () => {
             image: '/assets/Jackson-Kikonyogo.png',
         },
         {
-            text: 'There is no strategy that benefits so many areas in one´s life than BNI!',
+            text: 'There is no strategy that benefits so many areas in one&apos;s life than BNI!',
             name: 'Dr. Adriana Cortés',
             title: 'Health & Wellness, Colombia',
             image: '/assets/Dr-Adriana-Cortes.png',
         },
         {
-            text: "I've shifted my business to one developed via referrals with zero competition.",
+            text: 'I&apos;ve shifted my business to one developed via referrals with zero competition.',
             name: 'Kent Raymer',
             title: 'Construction, United States',
             image: '/assets/Kent-Raymer.png',
         },
         {
-            text: 'BNI has been a fundamental networking tool for my and my company’s growth.',
+            text: 'BNI has been a fundamental networking tool for my and my company&apos;s growth.',
             name: 'Rafael Lins',
             title: 'Pest Control, Brazil',
             image: '/assets/Rafael-Lins.png',
@@ -91,7 +91,7 @@ const ThreeStepsSection = () => {
                 <div className="carousel-track">
                     {[...firstRow, ...firstRow].map((t, idx) => (
                         <div className="testimonial-card solid-dark" key={idx}>
-                            <p className="testimonial-text">"{t.text}"</p>
+                            <p className="testimonial-text">{t.text}</p>
                             <div className="testimonial-info">
                                 <img src={t.image} alt={t.name} />
                                 <div>
@@ -108,7 +108,7 @@ const ThreeStepsSection = () => {
                 <div className="carousel-track">
                     {[...secondRow, ...secondRow].map((t, idx) => (
                         <div className="testimonial-card solid-dark" key={idx}>
-                            <p className="testimonial-text">"{t.text}"</p>
+                            <p className="testimonial-text">{t.text}</p>
                             <div className="testimonial-info">
                                 <img src={t.image} alt={t.name} />
                                 <div>
