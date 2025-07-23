@@ -1,43 +1,63 @@
 .bni-hero-wrapper {
-    width: 100%;
+    padding: 40px 20px 0px 20px;
+    background-color: #fff;
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
-    padding: 0 1rem;
 }
+
 
 .bni-hero-card {
     position: relative;
     width: 100%;
-    max-width: 1440px;
-    border-radius: 2rem;
+    max-width: 1200px;
+    height: 680px;
+    border-radius: 24px;
     overflow: hidden;
 }
 
 .bni-hero-video {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    border-radius: 2rem;
 }
 
-
-.bni-hero-btn {
+.bni-hero-button-only {
     position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: #cc0f2e;
-    color: white;
-    font-size: 1.25rem;
-    font-weight: bold;
-    padding: 1rem 2.5rem;
-    border-radius: 2rem;
+    bottom: 36px;
+    right: 140px;
+    background-color: #d6001c;
+    color: #fff;
+    padding: 16px 44px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 100px;
     text-decoration: none;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+    z-index: 2;
 }
 
-.bni-hero-btn:hover {
-    background-color: #a00d26;
-    transform: scale(1.05);
+.bni-hero-button-only:hover {
+    background-color: #b00018;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .bni-hero-card {
+        height: 480px;
+    }
+
+    .bni-hero-button-only {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        padding: 14px 36px;
+        font-size: 15px;
+        border-radius: 100px;
+    }
 }

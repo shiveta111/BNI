@@ -4,54 +4,65 @@
     z-index: 1000;
     width: 100%;
     background-color: white;
-    padding: 20px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 16px 0;
 }
 
 .navbarContainer {
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .logo {
     flex-shrink: 0;
-    display: flex;
+}
+
+.iconsRight {
+    display: none;
     align-items: center;
-    justify-content: center;
+    gap: 18px;
+}
+
+.searchIcon,
+.hamburger svg {
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
 }
 
 .navbarInner {
-    flex: 1;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
+    justify-content: space-between;
+    flex: 1;
+    background: #f5f5f5;
     padding: 14px 30px;
+    margin-left: 20px;
     border-radius: 999px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .navLinks {
     display: flex;
+    gap: 28px;
     align-items: center;
-    gap: 30px;
 }
 
 .navLinks a,
 .navLinks .dropdown {
-    text-decoration: none;
     color: black;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 16px;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.navLinks .arrow {
+.dropdown .arrow {
     margin-left: 4px;
     font-size: 10px;
 }
@@ -67,12 +78,11 @@
     align-items: center;
     gap: 6px;
     color: #cf2030;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
 }
 
 .email-icon {
-    font-size: 16px;
     color: #cf2030;
 }
 
@@ -80,14 +90,56 @@
     background-color: #cf2030;
     color: white;
     padding: 10px 20px;
-    font-weight: 700;
+    border-radius: 999px;
+    font-weight: 600;
     font-size: 14px;
     border: none;
-    border-radius: 999px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .inviteButton:hover {
     background-color: #a91522;
+}
+
+
+@media (max-width: 768px) {
+    .iconsRight {
+        display: flex;
+    }
+
+    .navbarInner {
+        display: none;
+        flex-direction: column;
+        background: white;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .navbarInner.open {
+        display: flex;
+    }
+
+    .navLinks {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 12px 20px;
+        width: 100%;
+    }
+
+    .rightSection {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 0 20px 20px;
+        width: 100%;
+    }
+
+    .inviteButton {
+        width: 100%;
+        text-align: center;
+    }
 }

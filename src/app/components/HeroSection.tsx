@@ -14,13 +14,14 @@ const HeroSection = () => {
                     playsInline
                 >
                     <source src="/assets/hero-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
                 </video>
 
                 <a
                     href="https://www.bni.com/find-a-chapter/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bni-hero-btn"
+                    className="bni-hero-button-only"
                 >
                     GET INVITED
                 </a>

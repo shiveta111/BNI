@@ -1,85 +1,66 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
+import testimonialData from './testimonialData';
 import '../styles/TestimonialSection.css';
 
-const testimonials = [
-    {
-        heading: 'Grow Your Business',
-        highlight: 'Scale Up',
-        subheading: 'Exponentially',
-        description:
-            'Our global presence together with a proven networking system results in unmatched business opportunities. Exchange qualified referrals and watch your business grow.',
-        message:
-            'I’ve achieved a great ROI with $736,000 in referrals and $110,000 in return.',
-        image: '/assets/Paul-Tommey.png',
-        name: 'Paul Tommey',
-        title: 'Realtor-Property Manager | USA',
-    },
-    {
-        heading: 'Become a Master',
-        highlight: 'Lifelong Learning',
-        subheading: 'Connector',
-        description:
-            'Grow to the Master Connector level, where you actively help your BNI Chapter to thrive and increase revenue for each Member.',
-        message:
-            'I used to struggle to get trusted logistic partners in other countries. Since I joined BNI, I get credible and trusted partners in just an hour after asking.',
-        image: '/assets/ernest.png',
-        name: 'Ernest Buabeng',
-        title: 'Clearing & Forwarding | Ghana',
-    },
-    {
-        heading: 'Build Your Professional',
-        highlight: 'Beyond Networking',
-        subheading: 'Network',
-        description:
-            'Build a trusted network of like-minded professionals who not only care about your success but are eager to help you achieve it.',
-        message:
-            'BNI has been a game-changer, expanding my network with like-minded professionals.',
-        image: '/assets/Crystal-Garcia.png',
-        name: 'Crystal Garcia',
-        title: 'Business Development, USA',
-    },
-];
-
 const TestimonialSection = () => {
-    const [index, setIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [scrollPhase, setScrollPhase] = useState(0);
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setIndex((prev) => (prev + 1) % testimonials.length);
-        }, 5000);
-        return () => clearInterval(timer);
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const sectionElement = document.querySelector('.testimonial-wrapper') as HTMLElement;
+
+            if (sectionElement) {
+                const rect = sectionElement.getBoundingClientRect();
+                const sectionTop = scrollY + rect.top;
+                const sectionHeight = sectionElement.offsetHeight;
+
+                if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    const relativeScroll = scrollY - sectionTop;
+                    const scrollPercentage = relativeScroll / sectionHeight;
+
+
+                    const newIndex = Math.floor(scrollPercentage * testimonialData.length);
+                    const clampedIndex = Math.min(Math.max(newIndex, 0), testimonialData.length - 1);
+                    setCurrentIndex(clampedIndex);
+
+
+                    const totalPhases = 4;
+                    const phaseProgress = scrollPercentage * totalPhases;
+                    const currentPhase = Math.floor(phaseProgress);
+                    const clampedPhase = Math.min(Math.max(currentPhase, 0), totalPhases - 1);
+                    setScrollPhase(clampedPhase);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const {
-        heading,
-        highlight,
-        subheading,
-        description,
-        message,
-        image,
-        name,
-        title,
-    } = testimonials[index];
+    const currentItem = testimonialData[currentIndex];
 
     return (
-        <section className="testimonial-section">
-            <div className="overlay">
-                <div className="text-content">
-                    <p className="highlight">{highlight}</p>
-                    <h1>{heading}</h1>
-                    <h1>{subheading}</h1>
-                    <p className="description">{description}</p>
+        <section className="testimonial-wrapper">
+            <div className="testimonial-content">
+                <div className={`text-area scroll-phase-${scrollPhase}`}>
+                    <p className="highlight">{currentItem.highlight}</p>
+                    <h1>{currentItem.heading}</h1>
+                    <h1>{currentItem.subheading}</h1>
+                    <p className="description">{currentItem.description}</p>
                 </div>
 
-                <div className="testimonial-box">
-                    <p className="quote">{message}</p>
-                    <div className="testimonial-user">
-                        <img src={image} alt={name} />
-                        <div>
-                            <p className="name">{name}</p>
-                            <p className="title">{title}</p>
+                <div className={`testimonial-card scroll-phase-${scrollPhase}`}>
+                    <div className="quote-section">
+                        <p className="quote">{currentItem.message}</p>
+                    </div>
+                    <div className="user-info">
+                        <img src={currentItem.image} alt={currentItem.name} />
+                        <div className="user-details">
+                            <p className="name">{currentItem.name}</p>
+                            <p className="role">{currentItem.role}</p>
                         </div>
                     </div>
                 </div>

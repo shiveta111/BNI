@@ -3,152 +3,168 @@
     background-image: url('/assets/global-map-black.png');
     background-repeat: no-repeat;
     background-size: 1000px auto;
-    background-position: center 180px;
+    background-position: center 150px;
     padding: 100px 20px 40px;
     color: white;
     font-family: "Helvetica Neue LT Std", sans-serif;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
-.section-title {
+.three-steps-section .section-title {
     font-size: 42px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.section-subtitle {
+.three-steps-section .section-subtitle {
     font-size: 18px;
     margin-bottom: 40px;
 }
 
-.steps-combined {
+.three-steps-section .steps-combined {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 30px;
     position: relative;
-    margin-bottom: 40px;
-    padding: 20px;
 }
 
-.step-block {
-    max-width: 280px;
+.three-steps-section .step-block {
     text-align: center;
+    max-width: 250px;
     position: relative;
 }
 
-.step-number {
-    background-color: white;
+.three-steps-section .step-number {
+    background: white;
     color: #d31727;
-    font-weight: bold;
-    font-size: 20px;
     width: 56px;
     height: 56px;
-    margin: 0 auto 16px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 56px;
     border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto 12px;
+    z-index: 2;
     position: relative;
-    z-index: 1;
 }
 
-.step-block:not(:last-child)::after {
-    content: '';
+.three-steps-section .step-block:not(:last-child)::after {
+    content: "";
     position: absolute;
     top: 28px;
-    right: -15px;
-    width: 30px;
+    right: -60px;
+    width: 120px;
     height: 2px;
     background-color: white;
-    z-index: 0;
 }
 
-.get-invited-btn {
-    background-color: white;
+.three-steps-section .step-block h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.three-steps-section .step-block p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 10px 0 0;
+}
+
+.three-steps-section .get-invited-btn {
+    background: white;
     color: #d31727;
     padding: 12px 30px;
     font-weight: bold;
+    font-size: 16px;
     border: none;
     border-radius: 30px;
-    margin-bottom: 40px;
+    margin-top: 30px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background 0.3s ease;
 }
 
-.carousel-row {
+.three-steps-section .get-invited-btn:hover {
+    background-color: #eee;
+}
+
+.three-steps-section .carousel-row {
     overflow: hidden;
-    margin: 20px 0;
+    margin: 40px 0 0;
 }
 
-.carousel-track {
+.three-steps-section .carousel-track {
     display: flex;
     gap: 24px;
     animation: scroll 90s linear infinite;
+    will-change: transform;
 }
 
-.carousel-row.right-to-left .carousel-track {
+.three-steps-section .carousel-row.right-to-left .carousel-track {
     animation-direction: reverse;
 }
 
-.testimonial-card {
+.three-steps-section .testimonial-card {
+    background-color: #aa1e26;
     border-radius: 16px;
-    padding: 30px;
-    width: 320px;
+    color: white;
+    padding: 25px 20px;
+    width: 300px;
     flex-shrink: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
-    box-sizing: border-box;
 }
 
-.testimonial-card.solid-dark {
-    background-color: #aa1e26;
-    color: white;
-}
-
-.testimonial-text {
-    font-size: 16px;
+.three-steps-section .testimonial-text {
+    font-size: 15px;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
-.testimonial-info {
+.three-steps-section .testimonial-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
-.testimonial-info img {
-    width: 48px;
-    height: 48px;
+.three-steps-section .testimonial-info img {
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.disclaimer {
+.three-steps-section .testimonial-info strong {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.three-steps-section .testimonial-info p {
     font-size: 12px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.three-steps-section .disclaimer {
+    font-size: 12px;
+    opacity: 0.8;
     margin-top: 40px;
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.4;
     text-align: center;
-}
-
-.carousel-row::-webkit-scrollbar {
-    display: none;
-}
-
-.carousel-row {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 @keyframes scroll {
     from {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
 
     to {
@@ -156,22 +172,36 @@
     }
 }
 
+.three-steps-section .carousel-row::-webkit-scrollbar {
+    display: none;
+}
+
+.three-steps-section .carousel-row {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 @media (max-width: 768px) {
-    .steps-combined {
+    .three-steps-section {
+        padding: 60px 20px;
+        background-size: 700px auto;
+        background-position: center 120px;
+    }
+
+    .three-steps-section .section-title {
+        font-size: 32px;
+    }
+
+    .three-steps-section .steps-combined {
         flex-direction: column;
-        align-items: center;
         gap: 40px;
     }
 
-    .step-block::after {
+    .three-steps-section .step-block:not(:last-child)::after {
         display: none;
     }
 
-    .testimonial-card {
-        width: 90vw;
-    }
-
-    .carousel-track {
-        animation: scroll 120s linear infinite;
+    .three-steps-section .carousel-track {
+        animation-duration: 120s;
     }
 }

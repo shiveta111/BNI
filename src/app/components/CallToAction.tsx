@@ -3,14 +3,14 @@ import '../styles/CallToAction.css';
 
 const CallToAction = () => {
     return (
-        <section className="call-to-action-wrapper">
-            <div className="call-to-action-box">
-                <div className="call-to-action-text">
+        <section className="cta-wrapper">
+            <div className="cta-box">
+                <div className="cta-text">
                     <p>
-                        <span className="highlight-red">See why 340K+</span> entrepreneurs like you chose <strong>BNI</strong> to grow their business
+                        <span className="cta-highlight">See why 340K+</span> entrepreneurs like you chose <strong>BNI</strong> to grow their business
                     </p>
                 </div>
-                <div className="call-to-action-button">
+                <div className="cta-button">
                     <button>FIND A CHAPTER</button>
                 </div>
             </div>

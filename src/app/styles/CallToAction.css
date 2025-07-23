@@ -1,64 +1,85 @@
-.call-to-action-wrapper {
-    background-color: white;
-    padding: 40px 0;
+.cta-wrapper {
+    background-color: #f2f2f2;
+    padding: 48px 60px;
+    margin: 0 auto 60px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    font-family: "Helvetica Neue LT Std", sans-serif;
 }
 
-.call-to-action-box {
-    background-color: #f4f4f4;
-    border-radius: 30px;
+.cta-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
     flex-wrap: wrap;
+    width: 100%;
     gap: 20px;
 }
 
-.call-to-action-text p {
+.cta-text p {
+    color: #000;
     font-size: 28px;
-    font-weight: 500;
-    line-height: 1.5;
+    font-weight: 600;
     margin: 0;
+    max-width: 700px;
+    line-height: 1.4;
 }
 
-.call-to-action-text .highlight-red {
-    color: #C8102E;
+.cta-highlight {
+    color: #d6001c;
     font-weight: 700;
 }
 
-.call-to-action-button button {
-    background-color: #C8102E;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    padding: 15px 40px;
-    font-size: 16px;
+.cta-button button {
+    background-color: #d6001c;
+    color: #fff;
+    padding: 16px 36px;
+    font-size: 18px;
     font-weight: bold;
+    border-radius: 50px;
+    border: none;
     cursor: pointer;
     white-space: nowrap;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-.call-to-action-button button:hover {
-    background-color: #a50e24;
+.cta-button button:hover {
+    background-color: #b00019;
 }
 
-@media (max-width: 768px) {
-    .call-to-action-box {
+
+@media screen and (max-width: 992px) {
+    .cta-box {
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
     }
 
-    .call-to-action-text p {
-        font-size: 22px;
+    .cta-text p {
+        font-size: 24px;
     }
 
-    .call-to-action-button button {
+    .cta-button button {
+        padding: 14px 30px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cta-wrapper {
+        padding: 24px;
+        margin: 0 auto 40px;
+
+    }
+
+    .cta-text p {
+        font-size: 20px;
+    }
+
+    .cta-button button {
         width: 100%;
-        max-width: 280px;
+        max-width: 300px;
     }
 }

@@ -2,10 +2,17 @@
 import React from 'react';
 import '../styles/ThreeStepsSection.css';
 
-const ThreeStepsSection = () => {
+interface Testimonial {
+    text: string;
+    name: string;
+    title: string;
+    image: string;
+}
+
+const ThreeStepsSection: React.FC = () => {
     const backgroundImage = '/assets/global-map.jpg';
 
-    const testimonials = [
+    const testimonials: Testimonial[] = [
         {
             text: 'BNI has shown me how to raise the bar and rewrite my business blueprint.',
             name: 'Farzana Suri',
@@ -37,19 +44,31 @@ const ThreeStepsSection = () => {
             image: '/assets/Jackson-Kikonyogo.png',
         },
         {
+<<<<<<< HEAD
             text: 'There is no strategy that benefits so many areas in one&apos;s life than BNI!',
+=======
+            text: 'There is no strategy that benefits so many areas in one\'s life than BNI!',
+>>>>>>> 14ad46b (Updated layout)
             name: 'Dr. Adriana Cortés',
             title: 'Health & Wellness, Colombia',
             image: '/assets/Dr-Adriana-Cortes.png',
         },
         {
+<<<<<<< HEAD
             text: 'I&apos;ve shifted my business to one developed via referrals with zero competition.',
+=======
+            text: 'I\'ve shifted my business to one developed via referrals with zero competition.',
+>>>>>>> 14ad46b (Updated layout)
             name: 'Kent Raymer',
             title: 'Construction, United States',
             image: '/assets/Kent-Raymer.png',
         },
         {
+<<<<<<< HEAD
             text: 'BNI has been a fundamental networking tool for my and my company&apos;s growth.',
+=======
+            text: 'BNI has been a fundamental networking tool for my and my company\'s growth.',
+>>>>>>> 14ad46b (Updated layout)
             name: 'Rafael Lins',
             title: 'Pest Control, Brazil',
             image: '/assets/Rafael-Lins.png',
