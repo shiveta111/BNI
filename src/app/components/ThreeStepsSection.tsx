@@ -44,31 +44,19 @@ const ThreeStepsSection: React.FC = () => {
             image: '/assets/Jackson-Kikonyogo.png',
         },
         {
-<<<<<<< HEAD
-            text: 'There is no strategy that benefits so many areas in one&apos;s life than BNI!',
-=======
             text: 'There is no strategy that benefits so many areas in one\'s life than BNI!',
->>>>>>> 14ad46b (Updated layout)
             name: 'Dr. Adriana Cortés',
             title: 'Health & Wellness, Colombia',
             image: '/assets/Dr-Adriana-Cortes.png',
         },
         {
-<<<<<<< HEAD
-            text: 'I&apos;ve shifted my business to one developed via referrals with zero competition.',
-=======
-            text: 'I\'ve shifted my business to one developed via referrals with zero competition.',
->>>>>>> 14ad46b (Updated layout)
+            text: 'Ive shifted my business to one developed via referrals with zero competition.',
             name: 'Kent Raymer',
             title: 'Construction, United States',
             image: '/assets/Kent-Raymer.png',
         },
         {
-<<<<<<< HEAD
-            text: 'BNI has been a fundamental networking tool for my and my company&apos;s growth.',
-=======
-            text: 'BNI has been a fundamental networking tool for my and my company\'s growth.',
->>>>>>> 14ad46b (Updated layout)
+            text: 'BNI has been a fundamental networking tool for me and my company\'s growth.',
             name: 'Rafael Lins',
             title: 'Pest Control, Brazil',
             image: '/assets/Rafael-Lins.png',
