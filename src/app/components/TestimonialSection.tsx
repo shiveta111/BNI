@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import testimonialData from './testimonialData';
 import '../styles/TestimonialSection.css';
 
@@ -21,11 +22,9 @@ const TestimonialSection = () => {
                     const relativeScroll = scrollY - sectionTop;
                     const scrollPercentage = relativeScroll / sectionHeight;
 
-
                     const newIndex = Math.floor(scrollPercentage * testimonialData.length);
                     const clampedIndex = Math.min(Math.max(newIndex, 0), testimonialData.length - 1);
                     setCurrentIndex(clampedIndex);
-
 
                     const totalPhases = 4;
                     const phaseProgress = scrollPercentage * totalPhases;
@@ -54,10 +53,16 @@ const TestimonialSection = () => {
 
                 <div className={`testimonial-card scroll-phase-${scrollPhase}`}>
                     <div className="quote-section">
-                        <p className="quote">{currentItem.message}</p>
+                        <p className="quote">"{currentItem.message}"</p>
                     </div>
                     <div className="user-info">
-                        <img src={currentItem.image} alt={currentItem.name} />
+                        <Image
+                            src={currentItem.image}
+                            alt={currentItem.name}
+                            width={80}
+                            height={80}
+                            className="user-image"
+                        />
                         <div className="user-details">
                             <p className="name">{currentItem.name}</p>
                             <p className="role">{currentItem.role}</p>

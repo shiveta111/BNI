@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import '../styles/ThreeStepsSection.css';
 
 interface Testimonial {
@@ -100,7 +101,7 @@ const ThreeStepsSection: React.FC = () => {
                         <div className="testimonial-card solid-dark" key={idx}>
                             <p className="testimonial-text">{t.text}</p>
                             <div className="testimonial-info">
-                                <img src={t.image} alt={t.name} />
+                                <Image src={t.image} alt={t.name} width={60} height={60} className="testimonial-img" />
                                 <div>
                                     <strong>{t.name}</strong>
                                     <p>{t.title}</p>
@@ -117,7 +118,7 @@ const ThreeStepsSection: React.FC = () => {
                         <div className="testimonial-card solid-dark" key={idx}>
                             <p className="testimonial-text">{t.text}</p>
                             <div className="testimonial-info">
-                                <img src={t.image} alt={t.name} />
+                                <Image src={t.image} alt={t.name} width={60} height={60} className="testimonial-img" />
                                 <div>
                                     <strong>{t.name}</strong>
                                     <p>{t.title}</p>
