@@ -59,7 +59,6 @@
     top: -0.5em;
 }
 
-
 .footer-col.contact-info ul li {
     display: flex;
     align-items: flex-start;
@@ -231,110 +230,151 @@
     text-align: right;
 }
 
-@media (max-width: 1024px) {
-    .footer-columns {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px 20px;
-    }
-
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
     .footer-top {
-        padding: 40px 40px 30px;
+        padding: 0;
     }
 
-    .footer-bottom {
-        padding: 20px 40px;
+    .footer-content {
+        max-width: 100%;
     }
 
-    .footer-middle {
-        flex-direction: column;
-        gap: 30px;
-        align-items: stretch;
+    /* Transform footer columns into mobile navigation style */
+    .footer-columns {
+        display: block;
+        margin-bottom: 0;
     }
 
+    .footer-col {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-col h4 {
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 18px 30px;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.02);
+        position: relative;
+    }
+
+    /* Add arrow for expandable sections */
+    .footer-col h4::after {
+        content: '→';
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #E8E9EA;
+    }
+
+    .footer-col ul {
+        display: none;
+        /* Hide by default - you can add JS to toggle */
+        padding: 0 30px 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-col ul li {
+        margin-bottom: 12px;
+        font-size: 13px;
+    }
+
+    .footer-col ul li a {
+        color: #E8E9EA;
+        display: block;
+        padding: 5px 0;
+    }
+
+    /* Contact info section styling */
+    .footer-col.contact-info {
+        padding: 25px 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-col.contact-info h4 {
+        padding: 0;
+        border: none;
+        background: none;
+        margin-bottom: 15px;
+    }
+
+    .footer-col.contact-info h4::after {
+        display: none;
+    }
+
+    .footer-col.contact-info ul {
+        display: block;
+        padding: 0;
+        background: none;
+    }
+
+    .footer-col.contact-info ul li {
+        margin-bottom: 15px;
+        font-size: 13px;
+    }
+
+    .contact-icon {
+        font-size: 14px;
+        width: 16px;
+    }
+
+    /* Hide subscription section on mobile to match design */
     .footer-subscribe {
-        justify-content: center;
+        display: none;
+    }
+
+    /* Social section mobile styling */
+    .footer-middle {
+        display: block;
+        margin-top: 0;
+        padding: 25px 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .footer-social {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-columns {
-        grid-template-columns: 1fr 1fr;
-        gap: 25px 15px;
+        justify-content: flex-start;
+        gap: 20px;
     }
 
-    .footer-top {
-        padding: 30px 20px 20px;
+    .footer-social p {
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
     }
 
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Footer bottom mobile styling */
     .footer-bottom {
-        padding: 15px 20px;
+        padding: 15px 30px;
     }
 
     .footer-bottom-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-links {
+        gap: 20px;
+        justify-content: center;
         flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .footer-links {
-        gap: 20px;
-        order: 1;
-    }
-
-    .footer-copy {
-        order: 2;
-        text-align: center;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .footer-subscribe {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .subscribe-form {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-columns {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .footer-top {
-        padding: 20px 15px 15px;
-    }
-
-    .footer-bottom {
-        padding: 12px 15px;
-    }
-
-    .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .footer-links {
-        gap: 15px;
-        justify-content: center;
-        order: 1;
-    }
-
-    .footer-copy {
-        order: 2;
-        text-align: center;
-        width: auto;
-        margin-top: 0;
     }
 
     .footer-links a {
@@ -343,20 +383,41 @@
 
     .footer-copy {
         font-size: 13px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .footer-col h4,
+    .footer-col.contact-info {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .footer-col ul {
+        padding: 0 20px 20px;
+    }
+
+    .footer-col h4::after {
+        right: 20px;
+    }
+
+    .footer-middle {
+        padding: 20px 20px;
+    }
+
+    .footer-bottom {
+        padding: 12px 20px;
+    }
+
+    .footer-links {
+        gap: 15px;
     }
 
     .social-icons a {
-        font-size: 16px;
-        width: 28px;
-        height: 28px;
-    }
-
-    .subscribe-form input {
-        font-size: 14px;
-        padding: 10px 15px;
-    }
-
-    .subscribe-form button {
-        padding: 10px 15px;
+        font-size: 18px;
+        width: 32px;
+        height: 32px;
     }
 }

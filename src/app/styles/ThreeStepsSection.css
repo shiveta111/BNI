@@ -94,12 +94,40 @@
 .three-steps-section .carousel-row {
     overflow: hidden;
     margin: 40px 0 0;
+    position: relative;
+}
+
+.three-steps-section .carousel-row::before,
+.three-steps-section .carousel-row::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.three-steps-section .carousel-row::before {
+    left: 0;
+    background: linear-gradient(to right,
+            #d31727 0%,
+            #d31727 2%,
+            transparent 100%);
+}
+
+.three-steps-section .carousel-row::after {
+    right: 0;
+    background: linear-gradient(to left,
+            #d31727 0%,
+            #d31727 2%,
+            transparent 100%);
 }
 
 .three-steps-section .carousel-track {
     display: flex;
     gap: 24px;
-    animation: scroll 90s linear infinite;
+    animation: scroll 45s linear infinite;
     will-change: transform;
 }
 
@@ -108,11 +136,12 @@
 }
 
 .three-steps-section .testimonial-card {
-    background-color: #aa1e26;
+    background: rgba(0, 0, 0, 0.35);
     border-radius: 16px;
     color: white;
-    padding: 25px 20px;
-    width: 300px;
+    padding: 25px;
+    width: 380px;
+    height: 273px;
     flex-shrink: 0;
     box-sizing: border-box;
     display: flex;
@@ -122,44 +151,56 @@
 }
 
 .three-steps-section .testimonial-text {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .three-steps-section .testimonial-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0px;
+}
+
+.three-steps-section .testimonial-info .author-details {
+    display: flex;
+    flex-direction: column;
 }
 
 .three-steps-section .testimonial-info img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
+    margin-right: 10px;
 }
 
 .three-steps-section .testimonial-info strong {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 0 20px;
 }
 
 .three-steps-section .testimonial-info p {
-    font-size: 12px;
+    font-size: 16px;
     margin: 0;
-    opacity: 0.9;
+    color: #ffffff;
 }
 
 .three-steps-section .disclaimer {
-    font-size: 12px;
-    opacity: 0.8;
-    margin-top: 40px;
-    max-width: 1100px;
+    font-size: 16px;
+    font-family: "Helvetica Neue LT Std", sans-serif;
+    color: #ffffff;
+    margin-top: 72px;
+    margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.4;
+    max-width: 1400px;
+    line-height: 1.1;
     text-align: center;
+    font-weight: normal;
 }
 
 @keyframes scroll {
@@ -202,6 +243,25 @@
     }
 
     .three-steps-section .carousel-track {
-        animation-duration: 120s;
+        animation-duration: 60s;
+    }
+
+    .three-steps-section .carousel-row::before,
+    .three-steps-section .carousel-row::after {
+        width: 25px;
+    }
+
+    .three-steps-section .carousel-row::before {
+        background: linear-gradient(to right,
+                #d31727 0%,
+                #d31727 2%,
+                transparent 100%);
+    }
+
+    .three-steps-section .carousel-row::after {
+        background: linear-gradient(to left,
+                #d31727 0%,
+                #d31727 2%,
+                transparent 100%);
     }
 }

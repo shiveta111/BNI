@@ -110,36 +110,206 @@
 
     .navbarInner {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #FFFFFFD9;
+        backdrop-filter: blur(10px);
         flex-direction: column;
-        background: white;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 20px;
+        margin: 0;
+        border-radius: 0;
         box-shadow: none;
-        padding: 0;
-        margin-top: 10px;
-        width: 100%;
+        overflow-y: auto;
+        z-index: 999;
+        font-family: "Helvetica Neue LT Std", sans-serif;
     }
 
     .navbarInner.open {
         display: flex;
     }
 
+
+    .closeButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 28px;
+        color: #64666A;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
     .navLinks {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 12px 20px;
+        align-items: stretch;
+        gap: 0;
+        padding: 40px 0 20px;
         width: 100%;
+        margin: 0;
+    }
+
+    .navLinks a,
+    .navLinks .dropdown {
+        color: #64666A;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: "Helvetica Neue LT Std", sans-serif;
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(100, 102, 106, 0.1);
+    }
+
+    .navLinks a:last-child,
+    .navLinks .dropdown:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown .arrow {
+        margin-left: auto;
+        font-size: 14px;
+        color: #64666A;
     }
 
     .rightSection {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 0 20px 20px;
+        align-items: stretch;
+        gap: 20px;
+        padding: 20px 0;
         width: 100%;
     }
 
     .inviteButton {
         width: 100%;
+        background-color: #CF2030;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: "Helvetica Neue LT Std", sans-serif;
+        border: none;
+        cursor: pointer;
         text-align: center;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .inviteButton:hover {
+        background-color: #a91522;
+    }
+
+    .email {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        color: #CF2030;
+        font-size: 16px;
+        font-family: "Helvetica Neue LT Std", sans-serif;
+        font-weight: 400;
+        margin-bottom: 20px;
+        text-decoration: none;
+    }
+
+    .email-icon {
+        color: #CF2030;
+        font-size: 14px;
+    }
+
+    .socialIcons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+        margin: 20px 0;
+    }
+
+    .socialIcons a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #64666A;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 50%;
+        background: rgba(100, 102, 106, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .socialIcons a:hover {
+        color: #CF2030;
+        background: rgba(207, 32, 48, 0.1);
+    }
+
+    .mobileContent {
+        padding: 20px 0;
+        text-align: center;
+        margin-top: auto;
+    }
+
+    .mobileContent h3 {
+        color: #CF2030;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-family: "Helvetica Neue LT Std", sans-serif;
+    }
+
+    .mobileContent p {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #64666A;
+        margin: 0;
+        font-family: "Helvetica Neue LT Std", sans-serif;
+    }
+
+    .mobileContent .highlight {
+        color: #CF2030;
+        font-weight: 600;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 4px;
+    }
+
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+        background-color: #333;
+        margin: 2px 0;
+        transition: 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-4px, 4px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-4px, -4px);
     }
 }
