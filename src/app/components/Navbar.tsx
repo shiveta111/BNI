@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faSearch } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -30,13 +30,22 @@ const Navbar = () => {
             <div className="navbarContainer">
 
                 <div className="logo">
-                    <Image src="/assets/BNI_logo.jpg" alt="BNI Logo" width={80} height={40} priority />
+                    <Image
+                        src="/assets/BNI_logo.jpg"
+                        alt="BNI Logo"
+                        width={80}
+                        height={40}
+                        priority
+                    />
                 </div>
 
 
                 <div className="iconsRight">
                     <FontAwesomeIcon icon={faSearch} className="searchIcon" />
-                    <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                    <div
+                        className={`hamburger ${menuOpen ? 'active' : ''}`}
+                        onClick={toggleMenu}
+                    >
                         <span />
                         <span />
                         <span />
