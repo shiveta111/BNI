@@ -78,18 +78,24 @@ const ThreeStepsSection: React.FC = () => {
             <div className="steps-combined">
                 <div className="step-block">
                     <div className="step-number"><span>1</span></div>
-                    <h4>Visit a BNI chapter</h4>
-                    <p>and experience the power of the BNI network</p>
+                    <div className="step-text">
+                        <h4>Visit a BNI chapter</h4>
+                        <p>and experience the power of the BNI network</p>
+                    </div>
                 </div>
                 <div className="step-block">
                     <div className="step-number"><span>2</span></div>
-                    <h4>Meet the Members</h4>
-                    <p>and learn how they can help you grow your business</p>
+                    <div className="step-text">
+                        <h4>Meet the Members</h4>
+                        <p>and learn how they can help you grow your business</p>
+                    </div>
                 </div>
                 <div className="step-block">
                     <div className="step-number"><span>3</span></div>
-                    <h4>Apply</h4>
-                    <p>to become a Member of a BNI Chapter</p>
+                    <div className="step-text">
+                        <h4>Apply</h4>
+                        <p>to become a Member of a BNI Chapter</p>
+                    </div>
                 </div>
             </div>
 
