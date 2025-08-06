@@ -53,7 +53,7 @@ const TestimonialSection = () => {
 
                 <div className={`testimonial-card scroll-phase-${scrollPhase}`}>
                     <div className="quote-section">
-                        <p className="quote">"{currentItem.message}"</p>
+                        <p className="quote">&ldquo;{currentItem.message}&rdquo;</p>
                     </div>
                     <div className="user-info">
                         <Image

@@ -1,0 +1,10 @@
+[33mcommit 8ac81ef0975f06e3930496b7b62a8e4c2aa00595[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: shiveta <shiveta111@gmail.com>
+Date:   Fri Aug 1 18:14:47 2025 +0200
+
+    Update ThreeStepsSection styles for mobile layout fix
+
+src/app/components/ThreeStepsSection.tsx
+src/app/styles/AboutBNI.css
+src/app/styles/HeroSection.css
+src/app/styles/ThreeStepsSection.css
